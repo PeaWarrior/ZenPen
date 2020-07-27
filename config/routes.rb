@@ -16,7 +16,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new', as: :login
   post '/login', to: 'sessions#create'
   post '/logout', to: 'sessions#destroy' 
-  
+  get '/prompt', to: 'posts#prompt'
+
   get '/meditate', to: 'audios#index', as: :meditate
   post '/add-to-favorites', to: 'user_audios#create'
   

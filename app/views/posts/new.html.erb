@@ -1,3 +1,7 @@
 <h1>Create a New Entry</h1>
 
+<%= button_to "Prompt Me", '/prompt', method: :get %>
+
+<%= @prompt %><br><br>
+
 <%= render partial: 'form', locals: {post: @post, user: current_user} %>

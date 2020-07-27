@@ -10,6 +10,12 @@ class PostsController < ApplicationController
 
     def new
         #authorize user before creating
+        @prompt = flash[:notice]
+    end
+
+    def prompt  
+        flash[:notice] = WritingPrompt.random_prompt
+        redirect_to new_post_path
     end
 
     def create

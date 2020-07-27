@@ -17,10 +17,6 @@ Audio.create(
     title: "Arriving in Mindful Presence",
     length: 5,
     file: "http://hwcdn.libsyn.com/p/e/9/4/e949a19e93c5ba44/2016-05-18-Meditation-Arriving-in-Mindful-Presence-5-min-TaraBrach.mp3?c_id=12273897&cs_id=12273897&expiration=1595863624&hwt=d833254c9b5883f99b2438c585061ddf")
-Audio.create(
-    title: "Coming Home to Presence",
-    length: 13,
-    file: "http://hwcdn.libsyn.com/p/c/4/0/c40664f32c9c18fd/2012-12-12-Meditation-Coming-Home-to-Presence-TaraBrach-hq.mp3?c_id=7246586&cs_id=7246586&expiration=1595864492&hwt=09a54acf17c6bb3c15da5681684743d8")
 
 
 x = User.create(username: "Anh", password: "123")
