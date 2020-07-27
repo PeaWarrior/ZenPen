@@ -6,19 +6,31 @@ class PostsController < ApplicationController
         #change this to current_user.posts
         @posts = Post.all
     end
+    
+    def show
+    end
 
     def new
         #authorize user before creating
+    end
+
+    def create
+        @post = Post.new(post_params)
+        if @post.save
+            redirect_to @post
+        else
+            render :new
+        end
     end
 
 
     private
 
     def set_post
-        @post = Post.new if params[:id]
+        params[:id] ? (@post = Post.find(params[:id])) : (@post = Post.new)
     end
 
     def post_params
-        params.require(:post).permit(:title, :content, :tags)
+        params.require(:post).permit(:title, :content, :user_id, :tag_names)
     end
 end

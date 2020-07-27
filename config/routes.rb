@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :posts
   # resources :users
 
+  post '/posts/new', to: 'posts#create'
+
   root 'basics#welcome'
   get '/signup', to: 'users#new', as: :signup
   get '/login', to: 'sessions#new', as: :login
