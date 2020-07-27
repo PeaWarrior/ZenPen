@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Mod2Project</title>
+    <title>Journalize</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render partial: 'layouts/nav/navbar' %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+    
+    <%= render partial: 'layouts/footer' %>
   </body>
 </html>

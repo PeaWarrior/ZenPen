@@ -10,6 +10,17 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+ @import "bootstrap";
+
+ .btn-default {
+    background-color: #7D8E95;
+    color:#FFF;
+    border-color: #2F3E48;
+}
+ 
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+    background-color: #2F3E48;
+    color:#FFBB98;
+    border-color: #344648;
+}
