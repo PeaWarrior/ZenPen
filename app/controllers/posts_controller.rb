@@ -9,7 +9,6 @@ class PostsController < ApplicationController
     end
 
     def new
-        #authorize user before creating
     end
 
     def create
@@ -27,7 +26,7 @@ class PostsController < ApplicationController
 
     def destroy
         @post.destroy
-        redirect_to root_path
+        redirect_to posts_path
     end
 
     private
@@ -37,8 +36,10 @@ class PostsController < ApplicationController
     end
 
     def searched_posts
-        current_user.posts.select do |post|
-            post.tags.pluck(:name).include?(params[:search])
+        if params[:search].blank?
+            current_user.posts
+        else
+            current_user.posts.select {|post| post.tags.pluck(:name).include?(params[:search]) }
         end
     end
 
