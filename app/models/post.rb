@@ -3,9 +3,8 @@ class Post < ApplicationRecord
   has_many :post_tags, dependent: :destroy
   has_many :tags, through: :post_tags
 
-  validates_presence_of :title, on: :create, message: "can't be blank"
-  validates_presence_of :content, on: :create, message: "can't be blank"
-
+  validates :title, presence: true
+  validates :content, presence: true
 
   def tag_names=(string_with_tags)
     tag_parser(string_with_tags).each do |tag_name|

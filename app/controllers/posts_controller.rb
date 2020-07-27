@@ -23,6 +23,15 @@ class PostsController < ApplicationController
         end
     end
 
+    def edit
+    end
+
+    def update
+        @post.assign_attributes(post_params)
+        @post.save ? (redirect_to @post) : (render :edit)
+        end
+    end
+
 
     private
 

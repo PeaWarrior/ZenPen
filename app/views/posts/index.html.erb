@@ -1,6 +1,8 @@
 <h1>Posts</h1>
 <hr>
 
+<%= button_to "Write a new post", new_post_path, method: :get %>
+
 <% @posts.each do |post| %>
     <%= render partial: 'post', locals: { post: post } %>
 <% end %>
