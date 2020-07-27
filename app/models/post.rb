@@ -12,7 +12,18 @@ class Post < ApplicationRecord
     end
   end
 
+  def self.search(search)
+    byebug
+    if search
+    #   current_user.posts
+    #   find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      current_user.posts
+    end
+  end
+
   private
+
 
   def tag_parser(string_with_tags)
     string_with_tags.split(",").map {|tag_name| tag_name.split(' ')}.flatten
