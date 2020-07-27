@@ -1,10 +1,8 @@
 class PostsController < ApplicationController
-
     before_action :set_post
 
     def index
-        #change this to current_user.posts
-        @posts = Post.all
+        @posts = current_user.posts
     end
     
     def show
@@ -16,11 +14,7 @@ class PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        if @post.save
-            redirect_to @post
-        else
-            render :new
-        end
+        @post.save ? (redirect_to @post) : (render :new)
     end
 
     def edit
@@ -29,7 +23,11 @@ class PostsController < ApplicationController
     def update
         @post.assign_attributes(post_params)
         @post.save ? (redirect_to @post) : (render :edit)
-        end
+    end
+
+    def destroy
+        @post.destroy
+        redirect_to root_path
     end
 
 
