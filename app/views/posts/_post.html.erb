@@ -1,0 +1,11 @@
+<h2><%= post.title %></h2>
+
+<% if !post.tags.blank? %>
+    Tags: 
+    <% post.tags.pluck(:name).each do |tag| %>
+        <%= tag %>
+    <% end %>
+<% end %>
+
+<p><%= post.content %></p>
+<br>
