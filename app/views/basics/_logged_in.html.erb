@@ -1,0 +1,7 @@
+<%= link_to 'Logout', logout_path, method: :post %>
+
+<h1>Welcome, <%= current_user.username %></h1>
+
+<h4>Let's get started: </h4>
+
+<%= button_to "Write", posts_path, method: :get %>
