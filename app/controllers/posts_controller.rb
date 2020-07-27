@@ -33,14 +33,14 @@ class PostsController < ApplicationController
 
     private
 
+    def search
+        params[:search] ? (searched_posts) : (current_user.posts)
+    end
+
     def searched_posts
         current_user.posts.select do |post|
             post.tags.pluck(:name).include?(params[:search])
         end
-    end
-
-    def search
-        params[:search] ? (searched_posts) : (current_user.posts)
     end
 
     def set_post
