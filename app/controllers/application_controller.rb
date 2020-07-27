@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
+  before_action :authorized
   
   def current_user
     User.find_by(id: session[:user_id]) 
@@ -13,7 +14,7 @@ class ApplicationController < ActionController::Base
     unless logged_in?
       flash[:notice] = "You must be logged in to see this page"
       
-      redirect_to login_path
+      redirect_to '/'
     end
   end
 

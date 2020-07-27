@@ -1,15 +1,17 @@
-<h1>Posts</h1>
+<h1>Journal Entries</h1>
 <hr>
-<%= form_with url: posts_path, method: :get, local: true do |f| %>
+<% if @posts.size > 0 %>
+    <%= form_with url: posts_path, method: :get, local: true do |f| %>
 
-    <%= f.label :search %>
-    <%= f.text_field :search %>
+        <%= f.label :search %>
+        <%= f.text_field :search %>
 
-    <%= f.submit "Search" %>
+        <%= f.submit "Search" %>
 
+    <% end %>
 <% end %>
 
-<%= button_to "Write a new post", new_post_path, method: :get %>
+<%= button_to "Write a New Entry", new_post_path, method: :get %>
 
 <% @posts.each do |post| %>
     <%= render partial: 'post', locals: { post: post } %>

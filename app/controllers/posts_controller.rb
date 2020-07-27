@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
     before_action :set_post
-    before_action :search, only: [:index]
 
     def index
         @posts = search

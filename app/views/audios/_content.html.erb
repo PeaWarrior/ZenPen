@@ -1,0 +1,29 @@
+<h4><%= @audio.title %> (<%= @audio.length %> minutes)</h4>
+
+<audio
+  controls
+  src="<%= @audio.file %>">
+    Your browser does not support the
+    <code>audio</code> element.
+</audio>
+
+<%= button_to "Next", meditate_path, method: :get %>
+
+<%= button_to "Add to Favorites", '/add-to-favorites', params: { user_id: current_user.id, audio_id: @audio.id }, method: :post %>
+
+<%= button_to "Home", '/', method: :get %>
+
+<% if current_user.audios %>
+  <h4>Your Favorite Meditations: </h4>
+  <ul>
+    <% current_user.audios.each do |audio| %>
+      <li>
+        <%= link_to audio.title, audio_path(audio) %> | 
+
+        <%= link_to "Unfavorite", user_audio_path(UserAudio.find_by(user_id: current_user.id, audio_id: audio.id)), method: :delete %>
+        
+      </li>
+    <% end %> 
+  </ul>
+
+<% end %>
