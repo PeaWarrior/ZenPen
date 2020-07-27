@@ -1,8 +1,9 @@
 class PostsController < ApplicationController
     before_action :set_post
+    before_action :search, only: [:index]
 
     def index
-        @posts = current_user.posts
+        @posts = search
     end
     
     def show
@@ -30,8 +31,17 @@ class PostsController < ApplicationController
         redirect_to root_path
     end
 
-
     private
+
+    def searched_posts
+        current_user.posts.select do |post|
+            post.tags.pluck(:name).include?(params[:search])
+        end
+    end
+
+    def search
+        params[:search] ? (searched_posts) : (current_user.posts)
+    end
 
     def set_post
         params[:id] ? (@post = Post.find(params[:id])) : (@post = Post.new)
@@ -40,4 +50,5 @@ class PostsController < ApplicationController
     def post_params
         params.require(:post).permit(:title, :content, :user_id, :tag_names)
     end
+
 end
