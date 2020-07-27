@@ -23,7 +23,7 @@ Audio.create(
     file: "http://hwcdn.libsyn.com/p/c/4/0/c40664f32c9c18fd/2012-12-12-Meditation-Coming-Home-to-Presence-TaraBrach-hq.mp3?c_id=7246586&cs_id=7246586&expiration=1595864492&hwt=09a54acf17c6bb3c15da5681684743d8")
 
 
-x = User.create(username: "Ahn", password: "123")
+x = User.create(username: "Anh", password: "123")
 z = User.create(username: "jax", password: "123")
 
 x.posts << Post.create(title: "w/e", content: "testt content")
