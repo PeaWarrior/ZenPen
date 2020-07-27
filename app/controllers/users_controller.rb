@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:edit, :update, :destroy]
 
+  skip_before_action :authorized, only: [:new, :create]
+  
   def new
     @user = User.new
     @errors = flash[:errors]

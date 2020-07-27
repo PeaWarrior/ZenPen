@@ -8,6 +8,8 @@
 
 <%= button_to "Write", posts_path, method: :get %>
 
+<%= button_to "Breathe", meditate_path, method: :get %>
+
 <%= button_to "Edit Account Info", edit_user_path(current_user.id), method: :get %>
 
 <%= button_to "Delete Account", "/users/#{current_user.id}", method: :delete %>
