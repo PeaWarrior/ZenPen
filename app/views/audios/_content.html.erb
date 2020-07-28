@@ -1,4 +1,4 @@
-<h4><%= @audio.title %> (<%= @audio.length %> minutes)</h4>
+<h4><%= @audio.title %> (<%= @audio.length %> min.)</h4>
 
 <audio
   controls
@@ -16,10 +16,9 @@
   <ul>
     <% current_user.audios.each do |audio| %>
       <li>
-        <%= link_to audio.title, audio_path(audio) %>
-
         <%= link_to "🗑", user_audio_path(UserAudio.find_by(user_id: current_user.id, audio_id: audio.id)), method: :delete %>
-        
+
+        <%= link_to audio.title, audio_path(audio) %>
       </li>
     <% end %> 
   </ul>
