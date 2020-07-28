@@ -11,9 +11,9 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import "bootstrap";
+@import "bootstrap";
 
- .btn-default {
+.btn-default {
     background-color: #7D8E95;
     color:#FFF;
     border-color: #2F3E48;
@@ -27,6 +27,8 @@
 
 h1 {
     color: #344648;
+    font-family: 'Shadows Into Light Two', cursive;
+    text-align: center;
 }
 
 .badge-tag {
@@ -47,4 +49,51 @@ h1 {
 
 .tag-color {
     color: #344648
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.container-primary {
+    background-color: white;
+    width: 800px;
+    margin: auto;
+    padding-bottom: 100px;
+    
+}
+
+#banner {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+.button-row {
+    display: flex;
+}
+
+.big-button {
+    flex: 33%;
+    text-align: center;
+    background-color: #f3c099;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 30px;
+    font-family: 'Shadows Into Light Two', cursive;
+    border-radius: 25px;
+    background: linear-gradient(45deg,  #f3c099, #ebac8d);
+    a {
+        color: white;
+      }
+    a:hover {
+        color:#3f3737;
+        text-decoration: none;
+    }
+}
+
+.center {
+    text-align: center;
 }
