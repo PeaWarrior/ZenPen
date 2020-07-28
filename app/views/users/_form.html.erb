@@ -1,21 +1,21 @@
-<% if @errors %>
-  <h4>Errors:</h4>
-  <ul>
-    <% @errors.each do |error| %>
-    <li><%= error %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= form_with model: @user, class: "text-center" do |f| %>
 
-<%= form_for @user do |f| %>
-  <%= f.label :username %><br>
-  <%= f.text_field :username %><br><br>
+  <%= f.text_field :username, placeholder: "New username" %><br><br>
 
-  <%= f.label :password %><br>
-  <%= f.password_field :password %><br><br>
+  <%= f.password_field :password, placeholder: "New password" %><br><br>
 
-  <%= f.label :password_confirmation %><br>
-  <%= f.password_field :password_confirmation %><br><br>
+  <%= f.password_field :password_confirmation, placeholder: "Confirm password" %><br><br>
   
   <%= f.submit %>
+
 <% end %>
+<br>
+
+<div class="text-center errors">
+<% if @errors %>
+    <% @errors.each do |error| %>
+    <%= error %><br>
+    <% end %>
+<% end %>
+
+</div>
