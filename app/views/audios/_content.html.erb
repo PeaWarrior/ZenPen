@@ -11,16 +11,14 @@
 
 <%= button_to "Add to Favorites", '/add-to-favorites', params: { user_id: current_user.id, audio_id: @audio.id }, method: :post %>
 
-<%= button_to "Home", '/', method: :get %>
-
-<% if current_user.audios %>
+<% if current_user.audios.size > 0 %>
   <h4>Your Favorite Meditations: </h4>
   <ul>
     <% current_user.audios.each do |audio| %>
       <li>
-        <%= link_to audio.title, audio_path(audio) %> | 
+        <%= link_to audio.title, audio_path(audio) %>
 
-        <%= link_to "Unfavorite", user_audio_path(UserAudio.find_by(user_id: current_user.id, audio_id: audio.id)), method: :delete %>
+        <%= link_to "🗑", user_audio_path(UserAudio.find_by(user_id: current_user.id, audio_id: audio.id)), method: :delete %>
         
       </li>
     <% end %> 

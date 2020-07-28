@@ -1,9 +1,11 @@
 class UserAudiosController < ApplicationController
 
   def create
-    UserAudio.create(user_id: params[:user_id], audio_id: params[:audio_id]) if !UserAudio.find_by(user_id: params[:user_id], audio_id: params[:audio_id])
+    if !UserAudio.find_by(user_id: params[:user_id], audio_id: params[:audio_id])
+      user_audio = UserAudio.create(user_id: params[:user_id], audio_id: params[:audio_id]) 
 
-    redirect_to meditate_path
+      redirect_to audio_path(user_audio.audio)
+    end
   end
 
   def destroy
