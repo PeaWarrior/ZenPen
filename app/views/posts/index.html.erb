@@ -1,13 +1,17 @@
+<br>
+<div class="form-inline d-flex justify-content-between">
 <h1>Journal Entries</h1>
+<%= render partial: 'search' if current_user.posts.size > 0 %>
+</div>
 <hr>
 
-<%= render partial: 'search' if current_user.posts.size > 0 %>
 
 
-<%= button_to "Write a New Entry", new_post_path, method: :get %>
+<%= button_to "New Entry", new_post_path, method: :get %><br>
 
 <% @posts.each do |post| %>
     <%= render partial: 'post', locals: { post: post } %>
 <% end %>
+<br>
 
-<h2><%= "No journal entries!" if @posts.blank? %></h2>
+<small><%= "No journal entries!" if @posts.blank? %></small>

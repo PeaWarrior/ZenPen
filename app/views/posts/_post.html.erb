@@ -1,11 +1,12 @@
-<h2><%= link_to post.title, post %></h2>
+<div>
+<h2 class="mb-0"><%= link_to post.title, post %></h2>
 
 <% if !post.tags.blank? %>
-    Tags: 
     <% post.tags.pluck(:name).each do |tag| %>
-        <%= tag %>
+        <span class="badge badge-tag"><%= tag %></span>
     <% end %>
 <% end %>
-
-<p><%= post.content %></p>
 <br>
+<small><%= post.content %></small>
+<br><br>
+</div>
