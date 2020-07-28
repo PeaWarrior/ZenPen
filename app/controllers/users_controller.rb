@@ -5,16 +5,15 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
-    @errors = flash[:errors]
   end
 
   def create
-    @user = User.create(user_params)
-    if @user.valid?
+    @user = User.new(user_params)
+    if @user.save
       login_user(@user)
       redirect_to "/"
     else
-      flash[:errors] = @user.errors.full_messages
+      flash[:errors] = @user.errors
       redirect_to signup_path
     end
   end
@@ -24,7 +23,6 @@ class UsersController < ApplicationController
 
   def update
     @user.assign_attributes(user_params)
-    # byebug
     if @user.save
       flash[:notice] = "Username and/or password updated."
       redirect_to "/"

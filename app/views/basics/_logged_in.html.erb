@@ -1,4 +1,7 @@
-<%# flash[:notice] %>
+<div role="alert" class=<%="alert alert-warning" if flash[:notice] %>>
+  <%= flash[:notice] %>
+</div>
+
 <br>
 <h1>Welcome, <%= current_user.username %></h1>
 <hr>

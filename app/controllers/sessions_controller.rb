@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorized, only: [:new, :create]
+  skip_before_action :authorized, only: [:new, :create, :destroy]
 
   def new
   end
@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
     
     if @user && @user.authenticate(params[:password]) 
         login_user(@user)
-        flash[:notice] = "Welcome #{@user.username}!"
         redirect_to "/"
     else
         flash[:notice] = 'Invalid username and/or password.'
