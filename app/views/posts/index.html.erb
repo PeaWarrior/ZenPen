@@ -2,7 +2,7 @@
 <h1>Journal Entries</h1>
 <hr>
 <div class="d-flex justify-content-between">
-<%= button_to "New Entry", new_post_path, class: "btn btn-outline-dark btn-sm ",method: :get %><br>
+<%= button_to "New Entry", new_post_path, class: "btn btn-outline-dark btn-sm ", method: :get %><br>
 <%= render partial: 'search' if current_user.posts.size > 0 %>
 </div>
 
@@ -11,6 +11,7 @@
     <%= render partial: 'post', locals: { post: post } %>
 <% end %>
 <br>
+<small><%= "You have no journal entries." if current_user.posts.count == 0 %></small>
+<small><%= "No journal entries found under \"#{params[:search]}\" tag." if @posts.blank? && params[:search] %></small>
 
-<small><%= "No journal entries!" if @posts.blank? %></small>
 <br>

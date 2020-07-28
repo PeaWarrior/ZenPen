@@ -1,12 +1,3 @@
-<%= button_to "Prompt Me", '/prompt', class: "btn btn-outline-dark btn-sm", method: :get %>
-<br>
-
-<% if @prompt %>
-  <%= @prompt %>
-  <br>
-<% end %>
-<br>
-
 <%= form_with model: post, local: true do |f| %>
 
     <%= f.hidden_field :user_id, value: "#{user.id}" %>
@@ -22,7 +13,10 @@
 
     <%= f.text_field :tag_names, class: "form-control", placeholder: "Tags (optional)" %><br>
 
-    <%= current_page?(new_post_path) ? (f.submit "New Entry", class: "btn btn-outline-dark btn-sm") : (f.submit "Edit Entry", class: "btn btn-outline-dark btn-sm") %><br><br>
+    <div class="d-flex justify-content-end">
+    <%= link_to "Cancel", :back, class: "btn btn-outline-dark btn-sm" %>
+    <%= current_page?(new_post_path) ? (f.submit "New Entry", class: "btn btn-outline-dark btn-sm ml-3") : (f.submit "Edit Entry", class: "btn btn-outline-dark btn-sm ml-3") %>
+    </div><br><br>
 
 <% end %>
 
