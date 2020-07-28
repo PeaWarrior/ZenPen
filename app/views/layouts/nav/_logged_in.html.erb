@@ -2,7 +2,7 @@
 
     <li class="nav-item"><%= link_to "Home", root_path, method: :get, class: "nav-link #{current_page?(root_path) ? "text-dark" : "text-black-50"}"%></li>
 
-    <li class="nav-item"><%= link_to "About", about_path, method: :get, class: "nav-link #{current_page?(root_path) ? "text-dark" : "text-black-50"}"%></li>
+    <li class="nav-item"><%= link_to "About", about_path, method: :get, class: "nav-link #{current_page?(about_path) ? "text-dark" : "text-black-50"}"%></li>
 
     <li class="nav-item"><%= link_to "Entries", posts_path, method: :get, class: "nav-link #{current_page?(posts_path) ? "text-dark" : "text-black-50"}"%></li>
 
