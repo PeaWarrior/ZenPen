@@ -84,9 +84,17 @@ Audio.create([
 x = User.create(username: "Anh", password: "123")
 z = User.create(username: "jax", password: "123")
 
-x.posts << Post.create(title: "w/e", content: "testt content")
-x.posts << Post.create(title: "w/e", content: "testt content")
-x.posts << Post.create(title: "w/e", content: "testt content")
+
+10.times do
+    x.posts << Post.create(title: Faker::Lorem.sentence(word_count: 3), content: "#{Faker::Lorem.paragraph(sentence_count: 20, supplemental: false, random_sentences_to_add: 4)}\n    #{Faker::Lorem.paragraph(sentence_count: 20, supplemental: false, random_sentences_to_add: 4)}\n    #{Faker::Lorem.paragraph(sentence_count: 20, supplemental: false, random_sentences_to_add: 4)}")
+    Post.last.tags << Tag.find_or_create_by(name: Faker::Color.color_name)
+end
+
+10.times do
+    z.posts << Post.create(title: Faker::Lorem.sentence(word_count: 3), content: "#{Faker::Lorem.paragraph(sentence_count: 20, supplemental: false, random_sentences_to_add: 4)}\n    #{Faker::Lorem.paragraph(sentence_count: 20, supplemental: false, random_sentences_to_add: 4)}\n    #{Faker::Lorem.paragraph(sentence_count: 20, supplemental: false, random_sentences_to_add: 4)}")
+    Post.last.tags << Tag.find_or_create_by(name: Faker::Color.color_name)
+end
+
 
 x.audios << Audio.create(
     title: "Coming Home to Presence",

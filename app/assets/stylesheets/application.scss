@@ -36,3 +36,15 @@ h1 {
 .errors {
     color: #FFBB98;
 }
+
+.truncate {
+    overflow: hidden;
+    display: block;
+    height: 70px;
+    white-space: normal;
+    text-overflow: ellipsis;
+}
+
+.tag-color {
+    color: #344648
+}

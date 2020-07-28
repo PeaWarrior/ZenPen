@@ -1,12 +1,13 @@
 <div>
 <h2 class="mb-0"><%= link_to post.title, post %></h2>
+<small>Last updated: <%= post.updated_at.strftime('%B %d, %Y') %></small><br>
 
 <% if !post.tags.blank? %>
     <% post.tags.pluck(:name).each do |tag| %>
-        <span class="badge badge-tag"><%= tag %></span>
+        <span class="badge badge-tag"><%= link_to tag, posts_path(search: tag), method: :get, class: "tag-color" %></span>
     <% end %>
 <% end %>
-<br>
-<small><%= post.content %></small>
+<br><br>
+<div class=<%= "truncate" if current_page?(posts_path) %>><%= render partial: 'post_content', locals: { post: post } %></div>
 <br><br>
 </div>
