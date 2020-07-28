@@ -1,5 +1,6 @@
 <div>
 <h2 class="mb-0"><%= link_to post.title, post %></h2>
+
 <small>Last updated: <%= post.updated_at.strftime('%B %d, %Y') %></small><br>
 
 <% if !post.tags.blank? %>
@@ -8,6 +9,10 @@
     <% end %>
 <% end %>
 <br><br>
-<div class=<%= "truncate" if current_page?(posts_path) %>><%= render partial: 'post_content', locals: { post: post } %></div>
+<%= link_to "Edit", edit_post_path %> | 
+<%= link_to "Delete", post_path, method: :delete, :data => {:confirm => 'Are you sure you want to delete this post?'} %> 
+
 <br><br>
+<div class=<%= "truncate" if current_page?(posts_path) %>><%= render partial: 'post_content', locals: { post: post } %></div>
+<br>
 </div>
