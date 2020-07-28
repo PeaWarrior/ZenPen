@@ -4,6 +4,10 @@
 
 <%= button_to "Prompt Me", '/prompt', method: :get %>
 
-<%= @prompt %><br><br>
+<% if @prompt %>
+<%= @prompt %>
+<br>
+<% end %>
+<br>
 
 <%= render partial: 'form', locals: {post: @post, user: current_user} %>

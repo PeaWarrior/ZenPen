@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/prompt', to: 'posts#prompt'
 
   get '/meditate', to: 'audios#index', as: :meditate
-  post '/add-to-favorites', to: 'user_audios#create'
+  post '/add-to-favorites', to: 'user_audios#create', as: :add_to_favorites
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

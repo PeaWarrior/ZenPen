@@ -1,31 +1,47 @@
 <br>
-<h1>Breathe</h1>
+<h1>Meditate</h1>
 <hr>
-<h4><%= @audio.title %> (<%= @audio.length %> min.)</h4>
+<h4 class="center"><%= @audio.title %> (<%= @audio.length %> min.)</h4>
+<br>
 
-<audio
+<div class="center">
+  <audio
   controls
   src="<%= @audio.file %>">
     Your browser does not support the
     <code>audio</code> element.
-</audio><br>
+  </audio><br>
 
-Courtesy of <%= link_to 'Tara Brach', "https://www.tarabrach.com/" %>
+  <small>
+    Courtesy of <%= link_to 'Tara Brach', "https://www.tarabrach.com/" %>
+    <br><br>
+  </small>
+  
 
-<%= button_to "Next", meditate_path, method: :get %>
+  <div class="small-button-row" class="center">
+    <div class="small-button"> 
+      <%= link_to "Add to Favorites", add_to_favorites_path(user_id: current_user.id, audio_id: @audio.id), method: :post %>   
+    </div>
 
-<%= button_to "Add to Favorites", '/add-to-favorites', params: { user_id: current_user.id, audio_id: @audio.id }, method: :post %>
+    <div class="small-button">
+      <%= link_to "Next", meditate_path, method: :get %>
+    </div>
+  </div>
+  <br><br>
+</div>
 
 <% if current_user.audios.size > 0 %>
-  <h4>Your Favorite Meditations: </h4>
+  <h4>Favorite Meditations: </h4>
   <ul>
     <% current_user.audios.each do |audio| %>
       <li>
-        <%= link_to "🗑", user_audio_path(UserAudio.find_by(user_id: current_user.id, audio_id: audio.id)), method: :delete %>
-         | 
         <%= link_to audio.title, audio_path(audio) %>
+
+        <%= link_to "🚫", user_audio_path(UserAudio.find_by(user_id: current_user.id, audio_id: audio.id)), method: :delete %> 
       </li>
     <% end %> 
   </ul>
 
 <% end %>
+
+<br><br>

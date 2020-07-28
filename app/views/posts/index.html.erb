@@ -1,11 +1,7 @@
 <br>
-<div class="form-inline d-flex justify-content-between">
 <h1>Journal Entries</h1>
 <%= render partial: 'search' if current_user.posts.size > 0 %>
-</div>
 <hr>
-
-
 
 <%= button_to "New Entry", new_post_path, method: :get %><br>
 

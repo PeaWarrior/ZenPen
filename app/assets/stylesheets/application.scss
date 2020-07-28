@@ -48,7 +48,7 @@ h1 {
 }
 
 .tag-color {
-    color: #344648
+    color: #344648;
 }
 
 body {
@@ -58,8 +58,9 @@ body {
 .container-primary {
     background-color: white;
     width: 800px;
+    height: 100vh;
     margin: auto;
-    padding-bottom: 0px;
+    position: relative;
 }
 
 #banner {
@@ -92,19 +93,46 @@ body {
         text-decoration: none;
     }
 }
+.small-button-row {
+    display: flex;
+    width: 450px;
+    margin: auto;
+}
+
+.small-button {
+    flex: 50%;
+    text-align: center;
+    background-color: #f3c099;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 20px;
+    font-family: 'Shadows Into Light Two', cursive;
+    border-radius: 25px;
+    background: linear-gradient(45deg,  #f3c099, #eebea6);
+    a {
+        color: white;
+      }
+    a:hover {
+        color:#3f3737;
+        text-decoration: none;
+    }
+}
 
 .center {
     text-align: center;
-}
-
-.footer-test {
-    width: 100% !important;
+    margin: auto;
 }
 
 .fixed-bottom {
-    position: relative
+    position: fixed;
+    width: 800px;
+    margin: auto;
 }
 
-.container-primary {
-    padding: 0
+#delete-link {
+    position: absolute;
+    bottom: 50px;
+    right: 0px;
 }

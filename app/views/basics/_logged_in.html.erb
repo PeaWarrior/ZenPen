@@ -3,12 +3,23 @@
 <h1>Welcome, <%= current_user.username %></h1>
 <hr>
 
-<h4>Let's get started: </h4>
+<p class="center">Select an option to get started: </p><br>
 
-<%= button_to "Write", posts_path, method: :get %>
+<div class="button-row"> 
+  <div class="big-button">
+    <%= link_to "Write", posts_path, method: :get %>
+  </div>
 
-<%= button_to "Breathe", meditate_path, method: :get %>
+  <div class="big-button">
+    <%= link_to "Meditate", meditate_path, method: :get %>
+  </div>
 
-<%= button_to "Edit Account Info", edit_user_path(current_user.id), method: :get %>
+  <div class="big-button">
+    <%= link_to "Edit Account", edit_user_path(current_user.id), method: :get %>
+  </div>
 
-<%= button_to "Delete Account", "/users/#{current_user.id}", method: :delete %>
+</div>
+
+<div id="delete-link"> 
+  <%= link_to "Delete Account", "/users/#{current_user.id}", method: :delete, :data => {:confirm => 'Are you sure you want to delete your account?'}%>
+</div>
