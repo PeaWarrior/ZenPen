@@ -12,8 +12,11 @@
   <%= f.password_field :password_confirmation, placeholder: "Confirm password" %><br>
   <span class="errors"><%= ("Confirmation password #{flash[:errors]['password_confirmation'].first}" if flash[:errors]['password_confirmation']) if flash[:errors] %></span>
   <br>
-  
-  <%= f.submit %>
+  <div class="d-flex justify-content-between">
+    <%= link_to "Back", :back, class: "btn btn-outline-dark btn-sm" %>
+    <%= f.submit "Update User", class: "btn btn-outline-dark btn-sm ml-5" %>
+    <%= link_to "Delete Account", "/users/#{current_user.id}", class: "btn btn-outline-custom btn-sm", method: :delete, :data => {:confirm => 'Are you sure you want to delete your account?'}%>
+  </div>
 
 <% end %>
 <br>

@@ -1,33 +1,23 @@
-<% if post.errors.any? %>
-    <% post.errors.full_messages.each do |m| %>
-        <div class="message"><%= m %></div>
-    <% end %>
-    <br>
-<% end %>
-
-<%= button_to "Prompt Me", '/prompt', method: :get %>
-
-<% if @prompt %>
-  <%= @prompt %>
-  <br>
-<% end %>
-<br>
-
 <%= form_with model: post, local: true do |f| %>
 
     <%= f.hidden_field :user_id, value: "#{user.id}" %>
 
     
     <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
-    <span class="errors"><%= post.errors[:title][0] %></span>
+    <span class="errors message"><%= "Title #{post.errors[:title][0]}" if post.errors[:title].any? %></span>
     <br>
     
     <%= f.text_area :content, placeholder: "Content", class: "form-control", rows: "15" %>
-    <span class="errors"><%= post.errors[:content][0] %></span>
+    <span class="errors message"><%= "Content #{post.errors[:content][0]}" if post.errors[:content].any? %></span>
     <br>
 
     <%= f.text_field :tag_names, class: "form-control", placeholder: "Tags (optional)" %><br>
 
-    <%= current_page?(new_post_path) ? (f.submit "New Entry") : (f.submit "Edit Entry") %><br><br>
+    <div class="d-flex justify-content-end">
+    <%= link_to "Cancel", :back, class: "btn btn-outline-dark btn-sm" %>
+    <%= current_page?(new_post_path) ? (f.submit "New Entry", class: "btn btn-outline-dark btn-sm ml-3") : (f.submit "Edit Entry", class: "btn btn-outline-dark btn-sm ml-3") %>
+    </div><br><br>
 
 <% end %>
+
+<br><br>
