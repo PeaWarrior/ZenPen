@@ -1,22 +1,19 @@
 <%= form_with model: @user, class: "text-center" do |f| %>
 
-  <%= f.text_field :username, placeholder: "New username" %><br><br>
+  <%= f.text_field :username, placeholder: "New username" %><br>
 
-  <%= f.password_field :password, placeholder: "New password" %><br><br>
+  <span class="errors"><%= ("Username #{flash[:errors]['username'].first}" if flash[:errors]['username']) if flash[:errors] %></span>
+  <br>
 
-  <%= f.password_field :password_confirmation, placeholder: "Confirm password" %><br><br>
+  <%= f.password_field :password, placeholder: "New password" %><br>
+  <span class="errors"><%= ("Password #{flash[:errors]['password'].first}" if flash[:errors]['password']) if flash[:errors] %></span>
+  <br>
+
+  <%= f.password_field :password_confirmation, placeholder: "Confirm password" %><br>
+  <span class="errors"><%= ("Confirmation password #{flash[:errors]['password_confirmation'].first}" if flash[:errors]['password_confirmation']) if flash[:errors] %></span>
+  <br>
   
   <%= f.submit %>
 
 <% end %>
 <br>
-
-<div class="text-center errors">
-  <% if @errors %>
-      <% @errors.each do |error| %>
-      <div class="message">
-        <%= error %>
-      </div>
-      <% end %>
-  <% end %>
-</div>
