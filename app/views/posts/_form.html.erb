@@ -1,4 +1,20 @@
+<% if post.errors.any? %>
+    <% post.errors.full_messages.each do |m| %>
+        <div class="message"><%= m %></div>
+    <% end %>
+    <br>
+<% end %>
+
+<%= button_to "Prompt Me", '/prompt', method: :get %>
+
+<% if @prompt %>
+  <%= @prompt %>
+  <br>
+<% end %>
+<br>
+
 <%= form_with model: post, local: true do |f| %>
+
     <%= f.hidden_field :user_id, value: "#{user.id}" %>
 
     <div class="field">
@@ -13,11 +29,5 @@
     <%= f.text_field :tag_names, placeholder: "funny, happy, etc.." %><br><br>
 
     <%= f.submit %><br><br>
-
-    <% if post.errors.any? %>
-        <% post.errors.full_messages.each do |m| %>
-            <%= m %><br>
-        <% end %>
-    <% end %>
 
 <% end %><br><br>

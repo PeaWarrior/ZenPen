@@ -12,10 +12,11 @@
 <br>
 
 <div class="text-center errors">
-<% if @errors %>
-    <% @errors.each do |error| %>
-    <%= error %><br>
-    <% end %>
-<% end %>
-
+  <% if @errors %>
+      <% @errors.each do |error| %>
+      <div class="message">
+        <%= error %>
+      </div>
+      <% end %>
+  <% end %>
 </div>
