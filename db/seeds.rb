@@ -55,11 +55,6 @@ Audio.create([
         file: "http://hwcdn.libsyn.com/p/7/3/7/7372599db3e89592/2015-12-16-Meditation-The-RAIN-of-Self-Compassion-TaraBrach.mp3?c_id=10518359&cs_id=10518359&expiration=1595896201&hwt=e06a3fa79916930431afc4af37af661b"
     },
     {
-        title: "Ten-Minute Basic Meditation Practice",
-        length: 10,
-        file: "http://hwcdn.libsyn.com/p/b/a/8/ba894e26b44e237a/2015-10-10-Ten-Minute-Basic-Meditation-Practice-TaraBrach.mp3?c_id=10075832&cs_id=10075832&expiration=1595896222&hwt=bf85db44e222437666bca2d3c58bdd04"
-    },
-    {
         title: "Body Scan – Living Presence",
         length: 11,
         file: "http://hwcdn.libsyn.com/p/8/5/6/856a28f0ce8c9310/2015-02-18-Meditation-Body-Scan-Living-Presence-11min-TaraBrach.mp3?c_id=8405335&cs_id=8405335&expiration=1595896275&hwt=ce199cbbfb893f23dbc2f92f87ca2c40"
