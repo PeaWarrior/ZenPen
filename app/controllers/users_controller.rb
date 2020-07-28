@@ -8,14 +8,9 @@ class UsersController < ApplicationController
   end
 
   def create
-<<<<<<< HEAD
     user_params[:username].downcase!
     @user = User.create(user_params)
     if @user.valid?
-=======
-    @user = User.new(user_params)
-    if @user.save
->>>>>>> 9a2c75cd1ed523153942d8811120240ca0794ac1
       login_user(@user)
       redirect_to "/"
     else
