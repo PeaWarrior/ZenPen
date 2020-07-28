@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    user_params[:username].downcase!
     @user = User.create(user_params)
     if @user.valid?
       login_user(@user)
