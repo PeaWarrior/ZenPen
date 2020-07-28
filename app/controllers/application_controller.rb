@@ -13,8 +13,7 @@ class ApplicationController < ActionController::Base
   def authorized
     unless logged_in?
       flash[:notice] = "You must be logged in to see this page"
-      
-      redirect_to '/'
+      redirect_to root_path
     end
   end
 

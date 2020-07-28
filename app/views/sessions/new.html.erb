@@ -1,16 +1,17 @@
-<div class="container mx-auto">
+<div class="container mx-auto text-center">
 <br>
-<h1 class="text-center">Log In</h1>
+<h1>Log In</h1>
 <hr>
 
-<p class="message"><%= flash[:notice] %></p>
-
 <%= form_with url: login_path, class: "text-center", local: true do |f| %>
-    <%= f.text_field :username, placeholder: "Username" %><br><br>
-  
-    <%= f.password_field :password, placeholder: "Password" %><br><br>
-    
+    <%= f.text_field :username, placeholder: "Username" %><br>
+    <br>
+    <%= f.password_field :password, placeholder: "Password" %><br>
+    <span class="errors"><%= flash[:notice] %></span>
+    <br>
     <%= f.submit 'Log In' %> 
 <% end %>
 
+<br>
+<br>
 </div>
