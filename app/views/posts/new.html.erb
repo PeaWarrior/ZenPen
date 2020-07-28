@@ -2,20 +2,7 @@
 <h1>Create a New Entry</h1>
 <hr>
 
-<<<<<<< HEAD
 <%= render partial: 'form', locals: {post: @post, user: current_user} %>
 
 <br>
 <br>
-=======
-<%= button_to "Prompt Me", '/prompt', class: "btn btn-outline-dark btn-sm", method: :get %>
-<br>
-
-<% if @prompt %>
-  <%= @prompt %>
-  <br>
-<% end %>
-<br>
-
-<%= render partial: 'form', locals: {post: @post, user: current_user} %>
->>>>>>> entries
