@@ -19,6 +19,55 @@
 </div>
 <br><br>
 
+<% if !current_user.has_goals? %>
+  <p>Feeling ambitious? <%= link_to '🖋 Set A Goal', root_path(set_goal: true) %></p>
+
+  <% if params[:set_goal] %>
+    <%= render "goal_form" %>
+  <% end %>
+
+<% else %>
+  <% if current_user.meditation_goal %>
+    Meditation Goal: <%= pluralize(current_user.meditation_goal, "day") %><br>
+
+    You Have Meditated For: <%= pluralize(current_user.meditation_dates_count, "day") %><br>
+
+    Your Progress:
+    <br>
+    
+    <div class="progress-bar">
+      <div class="filler" style="width:<%= current_user.percent_completion("meditation") %>%">
+        <%= current_user.percent_completion("meditation") %>%
+      </div>
+    </div>
+    <br>
+  <% end %>
+
+  <% if current_user.writing_goal %>
+    Writing Goal: <%= pluralize(current_user.writing_goal, "day") %><br>
+
+    You Have Written For: <%= pluralize(current_user.all_writing_dates.count, "day") %><br>
+
+    Your Progress:
+    <br>
+    
+    <div class="progress-bar">
+      <div class="filler" style="width:<%= current_user.percent_completion("writing") %>%">
+        <%= current_user.percent_completion("writing") %>%
+      </div>
+    </div>
+    <br>
+  <% end %>
+
+  <%= link_to '🖋 Set a New Goal', root_path(set_goal: true) %>
+  <% if params[:set_goal] %>
+    <%= render "goal_form" %>
+  <% end %>
+  <br>
+
+<% end %>
+
+<br>
 Your Last Seven Days:<br>
 <% meditated_last_seven_days = false %>
 <% wrote_last_seven_days = false %>
@@ -49,3 +98,5 @@ Your Last Seven Days:<br>
 </table>
 
 <%= "No records to display!" if !meditated_last_seven_days && !wrote_last_seven_days %>
+
+<br><br>

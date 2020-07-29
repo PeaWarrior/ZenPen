@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   post '/posts/new', to: 'posts#create'
 
   root 'basics#welcome'
+  post '/', to: 'basics#welcome'
+  post '/set-goal', to: 'basics#set_goal'
   get '/about', to: 'basics#about', as: :about
 
   get '/signup', to: 'users#new', as: :signup

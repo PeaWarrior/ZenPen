@@ -168,3 +168,18 @@ a:hover {
 .to-left {
     margin-right: 44%
 }
+
+.progress-bar {
+    width: 30%; 
+    height: 15px;
+    background-color: #ddd; 
+    border-radius: 25px;
+}
+
+.filler {
+    text-align: right; 
+    padding-top: 10px; 
+    padding-bottom: 10px;
+    color: white;
+    background-color: #f3c099;
+}

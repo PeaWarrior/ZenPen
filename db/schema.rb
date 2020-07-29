@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_014133) do
+ActiveRecord::Schema.define(version: 2020_07_29_154655) do
 
   create_table "audios", force: :cascade do |t|
     t.string "title"
@@ -59,6 +59,8 @@ ActiveRecord::Schema.define(version: 2020_07_29_014133) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.text "meditation_dates"
+    t.integer "meditation_goal"
+    t.integer "writing_goal"
   end
 
   add_foreign_key "post_tags", "posts"
