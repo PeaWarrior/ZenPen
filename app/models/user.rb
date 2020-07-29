@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :user_audios, dependent: :destroy
     has_many :audios, through: :user_audios
     validates :username, presence: true, uniqueness: {case_sensitive: false}
+    validates :password, presence: true
 
     def add_meditation_date
         if !self.meditation_dates

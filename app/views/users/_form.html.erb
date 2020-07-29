@@ -1,17 +1,18 @@
 <%= form_with model: @user, class: "text-center" do |f| %>
 
   <%= f.text_field :username, placeholder: "New username" %><br>
-
-  <span class="errors"><%= ("Username #{flash[:errors]['username'].first}" if flash[:errors]['username']) if flash[:errors] %></span>
+  <%= render partial: 'error_field', locals: { field: "Username", message: 'username' } %>
   <br>
 
   <%= f.password_field :password, placeholder: "New password" %><br>
-  <span class="errors"><%= ("Password #{flash[:errors]['password'].first}" if flash[:errors]['password']) if flash[:errors] %></span>
+  <%= render partial: 'error_field', locals: { field: "Password", message: 'password' } %>
   <br>
 
   <%= f.password_field :password_confirmation, placeholder: "Confirm password" %><br>
-  <span class="errors"><%= ("Confirmation password #{flash[:errors]['password_confirmation'].first}" if flash[:errors]['password_confirmation']) if flash[:errors] %></span>
+  <%= render partial: 'error_field', locals: { field: "Password confirmation", message: 'password_confirmation' } %>
+  
   <br>
+
   <div class="d-flex justify-content-between">
     <%= link_to "Back", :back, class: "btn btn-outline-dark btn-sm mr-5" %>
     <%= f.submit "Update User", class: "btn btn-outline-dark btn-sm #{"ml-3" if current_user} #{"to-left" if !current_user}" %>
