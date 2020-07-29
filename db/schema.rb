@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2020_07_29_154655) do
-=======
-ActiveRecord::Schema.define(version: 2020_07_29_133409) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -45,7 +42,6 @@ ActiveRecord::Schema.define(version: 2020_07_29_133409) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
->>>>>>> 91b944bfe64818361cdfe1b070f53cb5ba8ea9fd
 
   create_table "audios", force: :cascade do |t|
     t.string "title"
@@ -66,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_07_29_133409) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
+    t.text "content"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
