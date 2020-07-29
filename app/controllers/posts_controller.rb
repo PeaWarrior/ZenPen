@@ -38,6 +38,15 @@ class PostsController < ApplicationController
 
     private
 
+    
+    def set_post
+        params[:id] ? (@post = Post.find(params[:id])) : (@post = Post.new)
+    end
+    
+    def post_params
+        params.require(:post).permit(:title, :content, :user_id, :tag_names)
+    end
+    
     def search
         params[:search] ? (searched_posts) : (current_user.posts)
     end
@@ -46,16 +55,8 @@ class PostsController < ApplicationController
         if params[:search].blank?
             current_user.posts
         else
-            current_user.posts.select {|post| post.tags.pluck(:name).include?(params[:search]) }
+            Post.search(current_user, params[:search])
         end
-    end
-
-    def set_post
-        params[:id] ? (@post = Post.find(params[:id])) : (@post = Post.new)
-    end
-
-    def post_params
-        params.require(:post).permit(:title, :content, :user_id, :tag_names)
     end
 
 end
