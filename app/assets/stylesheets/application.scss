@@ -121,6 +121,15 @@ body {
     }
 }
 
+a {
+    color: #f7685c;
+}
+
+a:hover {
+    color:#3f3737;
+    text-decoration: none;
+}
+
 .center {
     text-align: center;
     margin: auto;
