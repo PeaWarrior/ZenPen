@@ -12,6 +12,19 @@ class Post < ApplicationRecord
     end
   end
 
+  def self.search(current_user, search, by = "content")
+    byebug
+    search_factor = Regexp.new(search, "i")
+    case by
+    when "tag"
+      current_user.posts.select {|post| post.tags.pluck(:name).match?(search_factor)}
+    when "content"
+      current_user.posts.select {|post| post.content.body.to_plain_text.match?(search_factor)}
+    when "title"
+      current_user.posts.select {|post| post.title.match?(search_factor)}
+    end
+  end
+
   private
 
   def tag_parser(string_with_tags)
