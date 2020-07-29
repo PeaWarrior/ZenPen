@@ -16,4 +16,9 @@ class User < ApplicationRecord
             end
         end
     end
+
+    def all_writing_dates
+        # return in an array strings of dates that the user have written
+        self.posts.map { |post| post.created_at.strftime("%Y-%m-%d") }
+    end
 end

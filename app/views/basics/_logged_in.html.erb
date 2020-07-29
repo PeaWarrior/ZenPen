@@ -26,13 +26,18 @@ Your Last Seven Days:<br>
         <th scope="col" class="center">
 
           <%= date.strftime("%A") %><br>
-
           <%= date.strftime("%m/%d") %><br>
 
           <% if current_user.meditation_dates && current_user.meditation_dates.split(',').include?(date.to_s) %>
 
             <%= image_tag('meditation.png', height: '25', width: '25')%>
 
+          <% end %>
+
+          <% if current_user.all_writing_dates && current_user.all_writing_dates.include?(date.to_s) %>
+
+            <%= image_tag('pen.png', height: '25', width: '25') %>
+            
           <% end %>
 
         </th>
