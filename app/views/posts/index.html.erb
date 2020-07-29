@@ -12,6 +12,6 @@
 <% end %>
 <br>
 <small><%= "You have no journal entries." if current_user.posts.count == 0 %></small>
-<small><%= "No journal entries found under \"#{params[:search]}\" tag." if @posts.blank? && params[:search] %></small>
+<small><%= "No journal entries found under \"#{params[:search]}\" by #{params[:by]}." if @posts.blank? && params[:search] %></small>
 
 <br>
