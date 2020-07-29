@@ -14,7 +14,6 @@ class BasicsController < ApplicationController
       current_user.update(writing_goal: num_days)
     elsif params[:category] == "meditate" && num_days > 0
       current_user.update(meditation_goal: num_days)
-      byebug
     end
 
     
