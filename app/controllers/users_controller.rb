@@ -28,7 +28,10 @@ class UsersController < ApplicationController
       flash[:notice] = "Username and/or password updated."
       redirect_to "/"
     else
-      flash[:errors] = @user.errors.full_messages
+      flash[:errors] = {}
+      @user.errors.messages.each do |key, value|
+        flash[:errors][key] = value[0]
+      end
       redirect_to edit_user_path(@user)
     end
   end
