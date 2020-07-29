@@ -132,12 +132,30 @@ body {
     margin: auto;
 }
 
-#delete-link {
-    position: absolute;
-    bottom: 50px;
-    right: 0px;
-}
-
 .message {
     color: #f7685c;
+}
+
+.post-options {
+    font-size: 14px;
+}
+
+.btn-outline-dark:hover {
+    background-color: #FBE0C3;
+    color: #344648;
+}
+
+.btn-outline-custom {
+    border-color: #344648;
+    color: red;
+}
+
+.btn-outline-custom:hover {
+    border-color: red;
+    background-color: #FBE0C3;
+    color: red;
+}
+
+.to-left {
+    margin-right: 44%
 }
