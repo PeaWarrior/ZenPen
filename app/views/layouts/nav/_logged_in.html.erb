@@ -10,6 +10,7 @@
 
 </ul>
 
+<%= link_to(edit_user_path(current_user)) { image_tag 'user.png', height: '35', width: '35', class: "mr-4" } %>
 <a class="nav-item"><%= link_to "Log Out", logout_path, method: :post, class: "btn btn-default mr-1"%></a>
 
 
