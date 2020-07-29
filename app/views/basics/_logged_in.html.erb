@@ -17,3 +17,25 @@
     <%= link_to "Edit Account", edit_user_path(current_user.id), method: :get %>
   </div>
 </div>
+<br><br>
+
+Your Last Seven Days:<br>
+<table class="table">
+    <tr>
+      <% (Date.today-6..Date.today).each do |date| %>
+        <th scope="col" class="center">
+
+          <%= date.strftime("%A") %><br>
+
+          <%= date.strftime("%m/%d") %><br>
+
+          <% if current_user.meditation_dates && current_user.meditation_dates.split(',').include?(date.to_s) %>
+
+            <%= image_tag('meditation.png', height: '25', width: '25')%>
+
+          <% end %>
+
+        </th>
+      <% end %>
+    </tr>
+</table>
