@@ -20,27 +20,32 @@
 <br><br>
 
 Your Last Seven Days:<br>
+<% meditated_last_seven_days = false %>
+<% wrote_last_seven_days = false %>
+
 <table class="table">
     <tr>
       <% (Date.today-6..Date.today).each do |date| %>
         <th scope="col" class="center">
-
           <%= date.strftime("%A") %><br>
-          <%= date.strftime("%m/%d") %><br>
+          <%# date.strftime("%m/%d") %>
 
           <% if current_user.meditation_dates && current_user.meditation_dates.split(',').include?(date.to_s) %>
 
             <%= image_tag('meditation.png', height: '25', width: '25')%>
+            <% meditated_last_seven_days = true %>
 
           <% end %>
 
           <% if current_user.all_writing_dates && current_user.all_writing_dates.include?(date.to_s) %>
 
             <%= image_tag('pen.png', height: '25', width: '25') %>
+            <% wrote_last_seven_days = true %>
             
           <% end %>
-
         </th>
       <% end %>
     </tr>
 </table>
+
+<%= "No records to display!" if !meditated_last_seven_days && !wrote_last_seven_days %>

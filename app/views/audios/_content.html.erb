@@ -38,7 +38,7 @@
       <li>
         <%= link_to audio.title, audio_path(audio) %>
 
-        <%= link_to "🚫", user_audio_path(UserAudio.find_by(user_id: current_user.id, audio_id: audio.id)), method: :delete %> 
+        <%= link_to "⛔️", user_audio_path(UserAudio.find_by(user_id: current_user.id, audio_id: audio.id)), method: :delete %> 
       </li>
     <% end %> 
   </ul>
