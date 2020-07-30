@@ -1,9 +1,9 @@
 <%= form_with url: posts_path, method: :get, local: true do |f| %>
 
     <select class="custom-select" name="by">
-        <option value="title">Title</option>
         <option value="content" selected="selected">Content</option>
         <option value="tag">Tag</option>
+        <option value="title">Title</option>
     </select>
 
     <%= f.text_field :search %>
