@@ -1,1 +1,1 @@
-<span class="errors"><%= ("#{field} #{flash[:errors][message]}" if flash[:errors][message]) if flash[:errors]%></span>
+<span class="errors"><%= ("#{field} #{flash[:errors][message][0]}" if flash[:errors][message]) if flash[:errors]%></span>

@@ -172,7 +172,8 @@ a:hover {
 }
 
 .progress-bar {
-    width: 30%; 
+    width: 70%; 
+    margin: auto;
     height: 15px;
     background-color: #ddd; 
     border-radius: 25px;
@@ -193,3 +194,7 @@ a:hover {
     margin-bottom: 2px;
 }
 
+.search {
+    height: 30px;
+    margin-bottom: 1px;
+}

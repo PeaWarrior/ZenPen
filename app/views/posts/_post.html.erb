@@ -3,8 +3,6 @@
 <%= link_to "All Entries", posts_path, class: "btn btn-outline-dark btn-sm mt-1", method: :get if current_page?(post) %>
 </div>
 
-
-
 <small>Last updated: <%= post.updated_at.strftime('%B %d, %Y') %></small><br>
 
 <% if !post.tags.blank? %>
