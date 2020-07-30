@@ -1,4 +1,3 @@
-<div>
 <div class="d-flex justify-content-between">
 <h2 class="mb-0"><%= link_to post.title, post %></h2>
 <%= link_to "All Entries", posts_path, class: "btn btn-outline-dark btn-sm mt-1", method: :get if current_page?(post) %>
@@ -11,7 +10,9 @@
 <% if !post.tags.blank? %>
     <% post.tags.pluck(:name).each do |tag| %>
         <span class="badge badge-tag"><%= link_to tag, posts_path(search: tag), method: :get, class: "tag-color" %></span>
-    <% end %><br>
+    <% end %>
+<% else %>
+    <small class="text-muted">No tags</small>
 <% end %>
 
 <% if !current_page?(posts_path) %>
