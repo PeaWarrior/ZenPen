@@ -1,9 +1,13 @@
 <%= form_with(url: "/set-goal", method: "post") do %>
-  I want to 
-  <%= select_tag "category", raw("<option>meditate</option><option>write</option>")%>
-  <%= number_field_tag(:num_days) %> days. <br>
+  <br>
+  <p class="center">
+    I want to 
+    <%= select_tag "category", raw("<option>meditate</option><option>write</option>")%> for 
+    <%= number_field_tag(:num_days) %> days. <br><br>
 
-  <%= submit_tag("Set Goal") %>
+    <%= submit_tag("Set Goal") %>
+  </p>
+
 <% end %>
 
 <br>

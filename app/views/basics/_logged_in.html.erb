@@ -20,49 +20,72 @@
 <br><br>
 
 <% if !current_user.has_goals? %>
-  <p>Feeling ambitious? <%= link_to '🖋 Set A Goal', root_path(set_goal: true) %></p>
+  <p class="center">Feeling Ambitious? <br>
+  <%= link_to '🖋 Set A Goal', root_path(set_goal: true) %></p>
 
   <% if params[:set_goal] %>
     <%= render "goal_form" %>
   <% end %>
 
 <% else %>
-  <% if current_user.meditation_goal %>
-    Meditation Goal: <%= pluralize(current_user.meditation_goal, "day") %><br>
+  <table class="center">
+    <tr>
+      <td>
+        <% if current_user.meditation_goal %>
+        Meditation Goal: <%= pluralize(current_user.meditation_goal, "day") %><br>
+        <span class="center">
+          You Have Meditated For: <%= pluralize(current_user.meditation_dates_count, "day") %><br>
+          
+          <% percent_meditation = current_user.percent_completion("meditation") %>
 
-    You Have Meditated For: <%= pluralize(current_user.meditation_dates_count, "day") %><br>
+          Your Progress:
+          <br>
+          
+          <div class="progress-bar">
+            <div class="filler" style="width:<%= percent_meditation %>%">
+              <%= percent_meditation %>%
+            </div>
+          </div>
 
-    Your Progress:
-    <br>
-    
-    <div class="progress-bar">
-      <div class="filler" style="width:<%= current_user.percent_completion("meditation") %>%">
-        <%= current_user.percent_completion("meditation") %>%
-      </div>
-    </div>
-    <br>
-  <% end %>
+          <% if percent_meditation >= 100 %>
+            🎊 Goal Accomplished! 🎉<br>
+          <% end %>
+                
+        <% end %>
+      </td>
+      <td style="padding-left:25px;">
+        <% if current_user.writing_goal %>
+        Writing Goal: <%= pluralize(current_user.writing_goal, "day") %><br>
 
-  <% if current_user.writing_goal %>
-    Writing Goal: <%= pluralize(current_user.writing_goal, "day") %><br>
+          You Have Written For: <%= pluralize(current_user.all_writing_dates.count, "day") %><br>
 
-    You Have Written For: <%= pluralize(current_user.all_writing_dates.count, "day") %><br>
+          <% percent_writing = current_user.percent_completion("writing") %>
 
-    Your Progress:
-    <br>
-    
-    <div class="progress-bar">
-      <div class="filler" style="width:<%= current_user.percent_completion("writing") %>%">
-        <%= current_user.percent_completion("writing") %>%
-      </div>
-    </div>
-    <br>
-  <% end %>
+          Your Progress:
+          <br>
+          
+          <div class="progress-bar">
+            <div class="filler" style="width:<%= percent_writing %>%">
+              <%= percent_writing %>%
+            </div>
+          </div>
 
-  <%= link_to '🖋 Set a New Goal', root_path(set_goal: true) %>
-  <% if params[:set_goal] %>
-    <%= render "goal_form" %>
-  <% end %>
+          <% if percent_writing >= 100 %>
+            🎊 Goal Accomplished! 🎉<br>
+          <% end %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+
+  <br>
+  <p class="center">
+    <%= link_to '🖋 Set a New Goal', root_path(set_goal: true) %>
+    <% if params[:set_goal] %>
+      <br>
+      <%= render "goal_form" %>
+    <% end %>
+  </p>
   <br>
 
 <% end %>
@@ -86,6 +109,7 @@ Your Last Seven Days:<br>
 
           <% end %>
 
+        
           <% if current_user.all_writing_dates && current_user.all_writing_dates.include?(date.to_s) %>
 
             <%= image_tag('pen.png', height: '25', width: '25') %>
@@ -97,6 +121,4 @@ Your Last Seven Days:<br>
     </tr>
 </table>
 
-<%= "No records to display!" if !meditated_last_seven_days && !wrote_last_seven_days %>
-
-<br><br>
+<p class="center"><%= "No records to display!" if !meditated_last_seven_days && !wrote_last_seven_days %></p>

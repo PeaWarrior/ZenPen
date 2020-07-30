@@ -13,7 +13,6 @@ class Post < ApplicationRecord
   end
 
   def self.search(current_user, search, by = "content")
-    byebug
     search_factor = Regexp.new(search, "i")
     case by
     when "tag"
