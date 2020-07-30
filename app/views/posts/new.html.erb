@@ -2,6 +2,13 @@
 <h1>Create a New Entry</h1>
 <hr>
 
+<div class="d-flex justify-content-start">
+    <%= button_to "Prompt Me", '/prompt', class: "btn btn-outline-dark btn-sm mr-5", method: :get %>
+
+    <span class="mt-1"><%= @prompt if @prompt %></span>
+</div>
+<br>
+
 <%= render partial: 'form', locals: {post: @post, user: current_user} %>
 
 <br>
