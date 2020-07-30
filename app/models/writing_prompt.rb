@@ -113,4 +113,5 @@ class WritingPrompt
   def self.random_prompt
     PROMPTS.sample
   end
+  
 end

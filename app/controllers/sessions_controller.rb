@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     
     if @user && @user.authenticate(params[:password]) 
         login_user(@user)
-        redirect_to "/"
+        redirect_to root_path
     else
         flash[:notice] = 'Invalid username and/or password.'
         redirect_to login_path
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
     session.delete(:user_id)
 
     flash[:notice] = "Logout Successful."
-    redirect_to '/'
+    redirect_to root_path
   end
 
 end 

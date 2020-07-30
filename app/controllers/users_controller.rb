@@ -9,10 +9,10 @@ class UsersController < ApplicationController
 
   def create
     user_params[:username].downcase!
-    @user = User.create(user_params)
-    if @user.valid?
+    @user = User.new(user_params)
+    if @user.save
       login_user(@user)
-      redirect_to "/"
+      redirect_to root_path
     else
       flash[:errors] = @user.errors
       redirect_to signup_path
@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user.assign_attributes(user_params)
     if @user.save
       flash[:notice] = "Username and/or password updated."
-      redirect_to "/"
+      redirect_to root_path
     else
       flash[:errors] = {}
       @user.errors.messages.each do |key, value|
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
   def destroy
     session[:user_id] = nil
     @user.destroy
-    redirect_to '/'
+    redirect_to root_path
   end
 
   private 
@@ -51,4 +51,5 @@ class UsersController < ApplicationController
   def find_user
     @user = User.find(params[:id])
   end
+  
 end

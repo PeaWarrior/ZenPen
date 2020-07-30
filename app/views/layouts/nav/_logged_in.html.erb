@@ -1,12 +1,9 @@
 <ul class="nav mr-auto">
 
-    <li class="nav-item"><%= link_to "Home", root_path, method: :get, class: "nav-link #{current_page?(root_path) ? "text-dark" : "text-black-50"}"%></li>
-
-    <li class="nav-item"><%= link_to "About", about_path, method: :get, class: "nav-link #{current_page?(about_path) ? "text-dark" : "text-black-50"}"%></li>
-
-    <li class="nav-item"><%= link_to "Entries", posts_path, method: :get, class: "nav-link #{current_page?(posts_path) ? "text-dark" : "text-black-50"}"%></li>
-
-    <li class="nav-item"><%= link_to "Meditate", audios_path, method: :get, class: "nav-link #{current_page?(audios_path) ? "text-dark" : "text-black-50"}"%></li>
+    <%= render partial: 'layouts/nav/nav_link', locals: {display_name: "Home", path: root_path} %>
+    <%= render partial: 'layouts/nav/nav_link', locals: {display_name: "About", path: about_path} %>
+    <%= render partial: 'layouts/nav/nav_link', locals: {display_name: "Entries", path: posts_path} %>
+    <%= render partial: 'layouts/nav/nav_link', locals: {display_name: "Meditate", path: audios_path} %>
 
 </ul>
 

@@ -12,6 +12,6 @@ class UserAudiosController < ApplicationController
     user_audio = UserAudio.find(params[:id])
 
     user_audio.destroy
-    redirect_back(fallback_location: '/meditate')
+    redirect_back(fallback_location: meditate_path)
   end
 end

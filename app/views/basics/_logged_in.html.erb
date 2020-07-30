@@ -81,10 +81,8 @@
   <br>
   <p class="center">
     <%= link_to '🖋 Set a New Goal', root_path(set_goal: true) %>
-    <% if params[:set_goal] %>
       <br>
-      <%= render "goal_form" %>
-    <% end %>
+      <%= render "goal_form" if params[:set_goal]  %>
   </p>
   <br>
 

@@ -5,31 +5,24 @@
     <title>Zen Pen</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Shadows+Into+Light+Two&display=swap" rel="stylesheet">
-
-
   </head>
 
   <body>
-
-
-
-  <div class="container-primary">
-    <%= render partial: 'layouts/nav/navbar' %>
-    <%= image_tag('banner.jpg', id: "banner") %>
-
-    <div class="container">
-      <%= yield %>
-    </div>
-
+    <div class="container-primary">
     
-    <%= render partial: 'layouts/footer/footer' %>    
-  </div>
+      <%= render partial: 'layouts/nav/navbar' %>
+      <%= image_tag('banner.jpg', id: "banner") %>
+
+      <div class="container">
+        <%= yield %>
+      </div>
+
+      <%= render partial: 'layouts/footer/footer' %>
+
+    </div>
 
   </body>
 </html>

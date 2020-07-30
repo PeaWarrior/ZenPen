@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_154655) do
+ActiveRecord::Schema.define(version: 2020_07_29_133409) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -87,10 +87,10 @@ ActiveRecord::Schema.define(version: 2020_07_29_154655) do
     t.string "username"
     t.string "password_digest"
     t.text "meditation_dates"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.integer "meditation_goal"
     t.integer "writing_goal"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"

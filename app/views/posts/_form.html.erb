@@ -2,7 +2,6 @@
 
     <%= f.hidden_field :user_id, value: "#{user.id}" %>
 
-    
     <%= f.text_field :title, placeholder: "Title", class: "form-control" %>
     <span class="errors message"><%= "Title #{post.errors[:title][0]}" if post.errors[:title].any? %></span>
     <br>
@@ -11,13 +10,14 @@
     <span class="errors message"><%= "Content #{post.errors[:content][0]}" if post.errors[:content].any? %></span>
     <br>
 
-    <%= f.text_field :tag_names, class: "form-control", placeholder: "Tags (optional)" %><br>
+    <%= f.text_field :tag_names, class: "form-control", placeholder: "Tags (optional)" %>
+    <br>
 
     <div class="d-flex justify-content-end">
-    <%= link_to "Cancel", :back, class: "btn btn-outline-dark btn-sm" %>
-    <%= current_page?(new_post_path) ? (f.submit "New Entry", class: "btn btn-outline-dark btn-sm ml-3") : (f.submit "Edit Entry", class: "btn btn-outline-dark btn-sm ml-3") %>
-    </div><br><br>
+        <%= link_to "Cancel", :back, class: "btn btn-outline-dark btn-sm" %>
+        <%= current_page?(new_post_path) ? (f.submit "New Entry", class: "btn btn-outline-dark btn-sm ml-3") : (f.submit "Edit Entry", class: "btn btn-outline-dark btn-sm ml-3") %>
+    </div>
+    <br><br>
 
 <% end %>
-
 <br><br>

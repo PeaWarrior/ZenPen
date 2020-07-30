@@ -1,6 +1,6 @@
 <ul class="nav mr-auto">
-    <li class="nav-item"><%= link_to "Home", root_path, method: :get, class: "nav-link #{current_page?(root_path) ? "text-dark" : "text-black-50"}"%></li>
-    <li class="nav-item"><%= link_to "About", about_path, method: :get, class: "nav-link #{current_page?(about_path) ? "text-dark" : "text-black-50"}"%></li>
+    <%= render partial: 'layouts/nav/nav_link', locals: {display_name: "Home", path: root_path} %>
+    <%= render partial: 'layouts/nav/nav_link', locals: {display_name: "About", path: about_path} %>
 </ul>
 
 <ul class="nav justify-content-end">

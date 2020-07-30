@@ -9,7 +9,6 @@ class PostsController < ApplicationController
     end
 
     def new
-        #authorize user before creating
         @prompt = flash[:notice]
     end
 
@@ -38,7 +37,6 @@ class PostsController < ApplicationController
 
     private
 
-    
     def set_post
         params[:id] ? (@post = Post.find(params[:id])) : (@post = Post.new)
     end
