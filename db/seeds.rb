@@ -95,12 +95,6 @@ z = User.create(username: "jax", password: "123")
 #     Post.last.tags << Tag.find_or_create_by(name: Faker::Color.color_name)
 # end
 
-
-x.audios << Audio.create(
-    title: "Coming Home to Presence",
-    length: 13,
-    file: "http://hwcdn.libsyn.com/p/c/4/0/c40664f32c9c18fd/2012-12-12-Meditation-Coming-Home-to-Presence-TaraBrach-hq.mp3?c_id=7246586&cs_id=7246586&expiration=1595864492&hwt=09a54acf17c6bb3c15da5681684743d8")
-
 Tag.create(name: "Humour")
 
 puts "Finished Seeding"

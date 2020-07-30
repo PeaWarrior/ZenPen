@@ -100,7 +100,6 @@ Your Last Seven Days:<br>
       <% (Date.today-6..Date.today).each do |date| %>
         <th scope="col" class="center">
           <%= date.strftime("%A") %><br>
-          <%# date.strftime("%m/%d") %>
 
           <% if current_user.meditation_dates && current_user.meditation_dates.split(',').include?(date.to_s) %>
 
