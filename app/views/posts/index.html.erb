@@ -2,10 +2,14 @@
 <h1>Journal Entries</h1>
 <hr>
 <div class="d-flex justify-content-between">
-<%= button_to "New Entry", new_post_path, class: "btn btn-outline-dark btn-sm ", method: :get %><br>
+<div class="d-flex">
+    <%= button_to "New Entry", new_post_path, class: "btn btn-outline-dark btn-sm mr-2", method: :get %>
+    <%= (button_to "Show All", posts_path, class: "btn btn-outline-dark btn-sm", method: :get) if params[:search] %>
+</div>
+<br>
 <%= render partial: 'search' if current_user.posts.size > 0 %>
 </div>
-
+<small><%= "Showing #{@posts.count} result#{"s" if @posts.count != 1}." if params[:search] %></small>
 <br>
 <% @posts.each do |post| %>
     <%= render partial: 'post', locals: { post: post } %>

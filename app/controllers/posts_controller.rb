@@ -55,7 +55,7 @@ class PostsController < ApplicationController
         if params[:search].blank?
             current_user.posts
         else
-            Post.search(current_user, params[:search])
+            Post.search(current_user, params[:search], params[:by])
         end
     end
 

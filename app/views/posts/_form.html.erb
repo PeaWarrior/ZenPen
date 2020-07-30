@@ -7,7 +7,7 @@
     <span class="errors message"><%= "Title #{post.errors[:title][0]}" if post.errors[:title].any? %></span>
     <br>
     
-    <%= f.rich_text_area :content, placeholder: "Content", class: "form-control" %>
+    <%= f.rich_text_area :content, placeholder: "Content" %>
     <span class="errors message"><%= "Content #{post.errors[:content][0]}" if post.errors[:content].any? %></span>
     <br>
 

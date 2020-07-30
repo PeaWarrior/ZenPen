@@ -16,7 +16,7 @@ class Post < ApplicationRecord
     search_factor = Regexp.new(search, "i")
     case by
     when "tag"
-      current_user.posts.select {|post| post.tags.pluck(:name).match?(search_factor)}
+      current_user.posts.select {|post| post.tags.pluck(:name).include?(search)}
     when "content"
       current_user.posts.select {|post| post.content.body.to_plain_text.match?(search_factor)}
     when "title"

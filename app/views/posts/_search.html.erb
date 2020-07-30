@@ -1,13 +1,13 @@
 <%= form_with url: posts_path, method: :get, local: true do |f| %>
 
     <select class="custom-select" name="by">
-        <option value="title">Title</option>
-        <option value="content" selected="selected">Content</option>
-        <option value="tag">Tag</option>
+        <option value="content" <%= selected="selected" if params[:by] == "content" %>>Content</option>
+        <option value="tag" <%= selected="selected" if params[:by] == "tag" %>>Tag</option>
+        <option value="title"<%= selected="selected" if params[:by] == "title" %>>Title</option>
     </select>
 
-    <%= f.text_field :search %>
+    <%= f.text_field :search, value: "#{params[:search]}" %>
 
-    <%= f.submit "Search", class: "btn btn-outline-dark btn-sm search" %>
+    <%= f.submit "Search", class: "btn btn-outline-dark btn-sm" %>
 
 <% end %>
