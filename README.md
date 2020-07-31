@@ -10,7 +10,7 @@ Zen Pen is a simple mental health web app designed to help users reduce stress t
 Users are able to create, tag, and search for journal entries. They are able to access a library of guided meditation audios, and favorite ones they would like to revisit. Users are also able to view their last seven day activity, as well as set goals to write/meditate.
 
 # App Flow
-![alt text](https://ibb.co/JkzXrvR)
+![alt text](https://i.ibb.co/vzJ2L3x/Home-Page.png)
 
 
 # Ruby Version
