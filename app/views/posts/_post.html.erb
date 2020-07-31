@@ -8,7 +8,7 @@
 
 <% if !post.tags.blank? %>
     <% post.tags.pluck(:name).each do |tag| %>
-        <span class="badge badge-tag"><%= link_to tag, posts_path(search: tag), method: :get, class: "tag-color" %></span>
+        <%= button_to tag, posts_path(search: tag), method: :get, params: {search: tag, by: "tag"}, class: "btn-tag" %>
     <% end %>
 <% else %>
     <small class="text-muted">No tags</small>
