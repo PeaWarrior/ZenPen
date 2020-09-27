@@ -29,10 +29,12 @@ Users can:
 
 `$ bundle install`
 * Migrate and seed
+
 `$ rails db:migrate`  
 
 `$ rails db:seed`
 * Start rails server
+
 `$ rails s`  
 
 
