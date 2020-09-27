@@ -42,27 +42,27 @@ Users can:
 # Features
 
 ### Journaling
-![Journal](https://im3.ezgif.com/tmp/ezgif-3-174a128e619e.gif)
+![Journal](https://media3.giphy.com/media/3MDUpmKeQ8Jpv2sUas/giphy.gif)
 
 * Receive a random prompt on click
 * Create a new rich-text entry using Rails Action Text
 * Edit and delete entries
 
 ### Journal Search
-![Search by Click](https://im3.ezgif.com/tmp/ezgif-3-3e84c32c8a42.gif)
-![Search by Input](https://im3.ezgif.com/tmp/ezgif-3-4c48cee7aee2.gif)
+![Search by Click](https://media3.giphy.com/media/6H26QgAIyX5oNfP8qn/giphy.gif)
+![Search by Input](https://media2.giphy.com/media/eXfRQPVBKcx3evkLSB/giphy.gif)
 
 * Search by clicking a tag or by inputting tag name, content, or title
 
 ### Meditation
-![Meditation](https://im3.ezgif.com/tmp/ezgif-3-3f96cd99aa49.gif)
+![Meditation](https://media2.giphy.com/media/glJJZDkd5WjZpGxNQU/giphy.gif)
 
 * Listen to a random guided meditation audio on click
 * Skip an audio
 * Favorite and un-favorite an audio
 
 ### Goal Tracking
-![Goal Tracking](https://im3.ezgif.com/tmp/ezgif-3-5880058c69f6.gif )
+![Goal Tracking](https://media2.giphy.com/media/TeDQ3fcLnNdTXBxcA9/giphy.gif)
 
 * Create a meditation or writing goal
 * See percentage progress
@@ -73,7 +73,7 @@ Users can:
 * See displayed activities for the last seven days, icons indicate whether a meditation session was completed and/or a journal entry was written
 
 ### Auth
-![Auth](https://im3.ezgif.com/tmp/ezgif-3-253aff390829.gif)
+![Auth](https://media1.giphy.com/media/77rj3TZzoOTcK10Ayu/giphy.gif)
 
 * Register and login, edit and delete account
 
