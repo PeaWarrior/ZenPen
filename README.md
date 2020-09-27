@@ -12,7 +12,7 @@ Users can:
 - Set goals
 
 ## Table of Contents
-* [Getting started](#getting-started)
+* [Getting Started](#getting-started)
 * [Features](#features)
 * [Tech Stack](#tech-stack)
 
