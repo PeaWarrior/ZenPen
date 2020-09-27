@@ -12,15 +12,12 @@ Users can:
 
 # Getting Started
 
-1. Install [Homebrew](https://brew.sh/)
-
-  `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
-2. Install [Ruby](https://www.ruby-lang.org/en/)
-
-  `$ brew install ruby` 
-3. Install [Rails](https://rubyonrails.org/)
-
-`$ gem install rails`
+* Install [Homebrew](https://brew.sh/)
+  *`$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
+* Install [Ruby](https://www.ruby-lang.org/en/)
+  *`$ brew install ruby` 
+* Install [Rails](https://rubyonrails.org/)
+  *`$ gem install rails`
 
 
 # Ruby Version
