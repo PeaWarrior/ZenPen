@@ -13,10 +13,13 @@ Users can:
 # Getting Started
 
 * Install [Homebrew](https://brew.sh/). 
+
   `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 * Install [Ruby](https://www.ruby-lang.org/en/). 
+
   `$ brew install ruby` 
 * Install [Rails](https://rubyonrails.org/). 
+
   `$ gem install rails`
 
 
