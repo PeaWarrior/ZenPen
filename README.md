@@ -1,5 +1,7 @@
 # Zen Pen
-Check out [our demo video](https://www.youtube.com/watch?v=2fVkiududa8)
+Demos:
+- [Short Intro](https://www.youtube.com/watch?v=2fVkiududa8)
+- [Full Demo](https://youtu.be/Y-nI7A8kdrU)
 
 Zen Pen is a mental health web app designed to help users reduce stress through self-expression and mindfulness meditation. 
 
@@ -15,6 +17,7 @@ Users can:
 * [Getting Started](#getting-started)
 * [Features](#features)
 * [Tech Stack](#tech-stack)
+* [Demos](#demo)
 
 <a name="getting-started"/>
 
@@ -94,3 +97,9 @@ Users can:
 * Bootstrap
 * Active Record
 * Action Text: Trix Editor
+
+<a name="demos"/>
+
+## Demos
+- [Short Intro](https://www.youtube.com/watch?v=2fVkiududa8)
+- [Full Demo](https://youtu.be/Y-nI7A8kdrU)
