@@ -22,6 +22,19 @@ Users can:
 
   `$ gem install rails`
 
+# Download This Project
+
+* Clone the repo and cd into the directory
+* Install dependencies
+
+`$ bundle install`
+* Migrate and seed
+`$ rails db:migrate`  
+
+`$ rails db:seed`
+* Start rails server
+`$ rails s`  
+
 
 # Ruby Version
 - ruby 2.6.1
