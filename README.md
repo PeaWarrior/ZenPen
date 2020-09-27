@@ -17,7 +17,7 @@ Users can:
 * [Getting Started](#getting-started)
 * [Features](#features)
 * [Tech Stack](#tech-stack)
-* [Demos](#demo)
+* [Demos](#demos)
 
 <a name="getting-started"/>
 
