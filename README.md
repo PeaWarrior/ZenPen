@@ -3,6 +3,8 @@ Check out [our demo video](https://www.youtube.com/watch?v=2fVkiududa8)
 
 Zen Pen is a mental health web app designed to help users reduce stress through self-expression and mindfulness meditation. 
 
+![Zen Pen](https://i.ibb.co/6tr2mWk/Screen-Shot-2020-09-27-at-11-00-03-AM.png)
+
 Users can:
 - Create, tag, and search for journal entries
 - Access a library of guided meditation audios and add audios to favorites
