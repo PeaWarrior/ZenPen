@@ -11,10 +11,10 @@ Users can:
 - View last seven days’ activities
 - Set goals
 
-## Table of contents
+## Table of Contents
 * [Getting started](#getting-started)
 * [Features](#features)
-* [Tech stack](#tech-stack)
+* [Tech Stack](#tech-stack)
 
 <a name="getting-started"/>
 
