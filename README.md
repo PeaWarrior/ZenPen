@@ -11,8 +11,14 @@ Users can:
 - View last seven days’ activities
 - Set goals
 
+## Table of contents
+* [Getting started](#getting-started)
+* [Features](#features)
+* [Tech stack](#tech-stack)
 
-# Getting Started
+<a name="getting-started"/>
+
+## Getting Started
 
 * Install [Homebrew](https://brew.sh/) 
 
@@ -39,7 +45,9 @@ Users can:
 
   `$ rails s`  
 
-# Features
+<a name="features"/>
+
+## Features
 
 ### Journaling
 ![Journal](https://media3.giphy.com/media/3MDUpmKeQ8Jpv2sUas/giphy.gif)
@@ -76,6 +84,8 @@ Users can:
 ![Auth](https://media1.giphy.com/media/77rj3TZzoOTcK10Ayu/giphy.gif)
 
 * Register and login, edit and delete account
+
+<a name="tech-stack"/>
 
 # Tech Stack
 * Ruby on Rails
